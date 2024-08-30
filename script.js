@@ -50,22 +50,3 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 }
-
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const isActive = question.classList.contains('active');
-        
-        // Close all other answers
-        document.querySelectorAll('.faq-question').forEach(q => {
-            q.classList.remove('active');
-            q.nextElementSibling.classList.remove('active');
-        });
-
-        // Toggle the clicked question
-        if (!isActive) {
-            question.classList.add('active');
-            answer.classList.add('active');
-        }
-    });
-});

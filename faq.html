@@ -26,11 +26,11 @@
         padding: 1.5rem;
         font-weight: bold;
         display: block;
-        text-decoration: none;
         position: relative;
         font-size: 2rem;
         border: 1px solid var(--main-color);
         border-radius: 8px;
+        cursor: pointer;
     }
     .faq-question:hover {
         background-color: var(--main-color);
@@ -47,23 +47,27 @@
     .faq-answer {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease-out;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out;
         background-color: var(--bg-color);
         font-size: 1.8rem;
         line-height: 1.6;
         border-left: 1px solid var(--main-color);
         border-right: 1px solid var(--main-color);
+        padding: 0 1.5rem;
     }
-    .faq-item:target .faq-answer {
-        max-height: 500px; /* Adjust this value based on your content */
+    .faq-toggle {
+        display: none;
+    }
+    .faq-toggle:checked + .faq-question + .faq-answer {
+        max-height: 500px; /* Adjust based on your content */
         padding: 1.5rem;
         border-bottom: 1px solid var(--main-color);
     }
-    .faq-item:target .faq-question {
+    .faq-toggle:checked + .faq-question {
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
-    .faq-item:target .faq-question::after {
+    .faq-toggle:checked + .faq-question::after {
         content: '-';
     }
 </style>
@@ -88,20 +92,24 @@
     <section class="faq" id="faq">
         <h2 class="heading">Frequently Asked <span>Questions</span></h2>
         <div class="faq-container">
-            <div class="faq-item" id="faq1">
-                <a href="#faq1" class="faq-question">What services do you offer?</a>
+            <div class="faq-item">
+                <input type="checkbox" id="faq1" class="faq-toggle">
+                <label for="faq1" class="faq-question">What services do you offer?</label>
                 <div class="faq-answer">I offer a range of services including web development, mobile app development, and cybersecurity consulting. My expertise covers both front-end and back-end development, as well as implementing robust security measures for digital projects.</div>
             </div>
-            <div class="faq-item" id="faq2">
-                <a href="#faq2" class="faq-question">What programming languages are you proficient in?</a>
+            <div class="faq-item">
+                <input type="checkbox" id="faq2" class="faq-toggle">
+                <label for="faq2" class="faq-question">What programming languages are you proficient in?</label>
                 <div class="faq-answer">I'm proficient in several programming languages including JavaScript, Python, Java, and C++. I also have experience with web technologies like HTML, CSS, React, and Node.js.</div>
             </div>
-            <div class="faq-item" id="faq3">
-                <a href="#faq3" class="faq-question">Do you offer internship or collaboration opportunities?</a>
+            <div class="faq-item">
+                <input type="checkbox" id="faq3" class="faq-toggle">
+                <label for="faq3" class="faq-question">Do you offer internship or collaboration opportunities?</label>
                 <div class="faq-answer">Yes, I'm always open to internship and collaboration opportunities. These experiences help me grow as a developer and contribute to exciting projects. If you have an opportunity you'd like to discuss, please reach out via my contact page.</div>
             </div>
-            <div class="faq-item" id="faq4">
-                <a href="#faq4" class="faq-question">How can I get in touch for a project or inquiry?</a>
+            <div class="faq-item">
+                <input type="checkbox" id="faq4" class="faq-toggle">
+                <label for="faq4" class="faq-question">How can I get in touch for a project or inquiry?</label>
                 <div class="faq-answer">You can reach out to me through the contact form on my website, or connect with me on LinkedIn. I'm always excited to discuss new projects and opportunities in web development, cybersecurity, or related fields.</div>
             </div>
         </div>

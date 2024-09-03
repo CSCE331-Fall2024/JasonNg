@@ -552,11 +552,11 @@ h4 {
   }
 
   .card-front h4, .card-back h4 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .card-front p, .card-back ul {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 }
 
